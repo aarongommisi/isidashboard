@@ -2,56 +2,7 @@
 <html>
 <head>
   <title>ISI - Tools</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      margin-top: 50px;
-    }
-    form {
-      width: 500px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    input[type=file] {
-      display: block;
-      margin-bottom: 10px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    input[type=text] {
-      width: 95%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      margin-bottom: 10px;
-    }
-    input[type=submit] {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    input[type=submit]:hover {
-      background-color: #3e8e41;
-    }
-    #status {
-      text-align: center;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
   <script>
     function submitForm(event) {
       event.preventDefault();
@@ -95,14 +46,26 @@
   </script>
 </head>
 <body>
-  <h1>ISI - PDF Data Extraction Tool - AECOM</h1>
+  <div id="header" class="header">
+    <img src="{{ url_for('static', filename='imgs/ISIColourLogo.png') }}" alt="ISI Logo" class="logo">
+    <div id="header-content">
+      <h1>ISI - Company Dashboard</h1>
+      <div id="searchbar">
+        <input type="text" id="search" name="search" placeholder="Search...">
+        <input type="submit" value="Search">
+      </div>
+    </div>
+  </div>
   <form id="upload-form" onsubmit="submitForm(event)">
+    <h2>ISI - PDF Data Extraction Tool - AECOM</h2>
+    <br>
     <input type="file" name="files[]" multiple>
     <br>
     <label for="business_entity">Business Entity:</label>
     <input type="text" id="business_entity" name="business_entity">
     <br>
     <input type="submit" value="Upload and Process">
+    <a href="/" class="dashboard-button" style=" float: right;">Back to Dashboard</a>
   </form>
   <!-- Add this line below the form -->
   <div id="status"></div>

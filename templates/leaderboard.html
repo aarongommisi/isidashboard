@@ -2,65 +2,42 @@
 <html>
   <head>
     <title>Exam Leaderboard</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        color: #333;
-      }
-
-      h1 {
-        text-align: center;
-        margin-top: 50px;
-      }
-
-      table {
-        width: 500px;
-        margin: 50px auto;
-        border-collapse: collapse;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-
-      th,
-      td {
-        padding: 10px;
-        text-align: center;
-      }
-
-      th {
-        background-color: #4CAF50;
-        color: #fff;
-      }
-
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-
-      tr:hover {
-        background-color: #ddd;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body>
-    <h1>Mock Exam Leaderboard</h1>
-    <table>
-      <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Score</th>
-        <th>Total Questions</th>
-        <th>Percentage</th>
-      </tr>
-      {% for result in results %}
-      <tr>
-        <td>{{ loop.index }}</td>
-        <td>{{ result['name'] }}</td>
-        <td>{{ result['score'] }}</td>
-        <td>{{ result['total_questions'] }}</td>
-        <td>{{ result['percentage'] }}%</td>
-      </tr>
-      {% endfor %}
-    </table>
+  <div id="header" class="header">
+    <img src="{{ url_for('static', filename='imgs/ISIColourLogo.png') }}" alt="ISI Logo" class="logo">
+    <div id="header-content">
+      <h1>ISI - Company Dashboard</h1>
+      <div id="searchbar">
+        <input type="text" id="search" name="search" placeholder="Search...">
+        <input type="submit" value="Search">
+      </div>
+    </div>
+  </div>
+  <div id="dashboardlayout">
+    <div id="dashboard">
+      <h1>Mock Exam Leaderboard</h1>
+        <table>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Total Questions</th>
+            <th>Percentage</th>
+          </tr>
+          {% for result in results %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ result['name'] }}</td>
+            <td>{{ result['score'] }}</td>
+            <td>{{ result['total_questions'] }}</td>
+            <td>{{ result['percentage'] }}%</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <a href="/" class="dashboard-button" style=" float: right;">Back to Dashboard</a>
+      </div>
+    </div>
   </body>
 </html>

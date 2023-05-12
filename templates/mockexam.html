@@ -2,139 +2,27 @@
 <html>
   <head>
     <title>SAFED Mock Test - LOLER (WiP)</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        color: #333;
-      }
-
-      h1 {
-        text-align: center;
-        margin-top: 50px;
-      }
-
-      form {
-        width: 500px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-
-      label {
-        display: block;
-        margin-bottom: 5px;
-      }
-
-      input[type=text] {
-        width: 95%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        margin-bottom: 10px;
-      }
-
-      input[type=submit] {
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-
-      input[type=submit]:hover {
-        background-color: #3e8e41;
-      }
-
-      .question-container {
-        margin-top: 20px;
-        margin: auto;
-        padding: 10px;
-        width:500px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .options {
-        margin-top: 10px;
-      }
-
-      .option {
-        display: block;
-        margin-bottom: 5px;
-      }
-
-      .timer {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-      }
-
-      .option-button {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 5px;
-        background-color: #4CAF50;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        color: #fff;
-      }
-
-      .option-button:hover {
-        background-color: #3e8e41;
-      }
-
-      .option-button.selected {
-        background-color: #1e7b32;
-      }
-
-      .option-button.correct {
-        background-color: #0f0;
-      }
-
-      .option-button.incorrect {
-        background-color: #f00;
-      }
-
-      .result-container {
-        margin-top: 20px;
-        margin: auto;
-        padding: 10px;
-        width: 500px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-      .leaderboard-button {
-      display: inline-block;
-      margin-bottom: 10px;
-      padding: 10px 20px;
-      background-color: #2196F3;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 3px;
-      text-align: center;
-      transition: background-color 0.2s;
-    }
-    .leaderboard-button:hover {
-      background-color: #0d8aee;
-    }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
   </head>
   <body>
-    <h1>SAFED Mock Test - LOLER (WiP)</h1>
+  <div id="header" class="header">
+    <img src="{{ url_for('static', filename='imgs/ISIColourLogo.png') }}" alt="ISI Logo" class="logo">
+    <div id="header-content">
+      <h1>ISI - Company Dashboard</h1>
+      <div id="searchbar">
+        <input type="text" id="search" name="search" placeholder="Search...">
+        <input type="submit" value="Search">
+      </div>
+    </div>
+  </div>
+    
     <form id="quiz-form">
+      <h2>SAFED Mock Test - LOLER (WiP)</h2>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name">
       <input type="submit" value="Start Exam">
+      <a href="/" class="dashboard-button" style=" float: right;">Back to Dashboard</a>
     </form>
     <div id="quiz" style="display:none;">
       <div class="question-container" id="question-container"></div>
