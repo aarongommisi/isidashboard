@@ -7,9 +7,9 @@ import zipfile
 import sqlite3
 
 
-UPLOAD_FOLDER = "./input"
-OUTPUT_FOLDER = "./output"
-PROCESSED_FOLDER = "./processed"
+UPLOAD_FOLDER = './input'
+OUTPUT_FOLDER = './output'
+PROCESSED_FOLDER = './processed'
 ALLOWED_EXTENSIONS = {'pdf'}
 
 app = Flask(__name__)
