@@ -1,0 +1,18 @@
+Using GIT 
+
+to push updates:
+
+	- add all folders to the push
+	"git add -A" 
+
+	- commit the change with a description of the change
+	"git commit -m 'Description of change'"
+
+	- push the update to the main folder
+	"git push -u -f origin main"
+
+pull updates to live:
+	
+
+	- Pull the latest version of project
+	"git pull git@github.com:aarongommisi/isidashboard.git"
