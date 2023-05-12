@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+  <title>ISI - Company Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    h1 {
+      text-align: left;
+      margin-top: 50px;
+    }
+    h2 {
+      text-align: center;
+    }
+    /* Additional styles for the dashboard */
+    #dashboardlayout {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1125px;
+      justify-content: space-around;
+      margin: auto;
+    }
+    #dashboard {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      margin: 10px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .dashboard-button {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      background-color: #2196F3;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 3px;
+      text-align: center;
+      transition: background-color 0.2s;
+    }
+    .dashboard-button:hover {
+      background-color: #0d8aee;
+    }
+
+    /* Styles for search bar */
+    #searchbar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    #searchbar input[type=text] {
+      width: 500px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+    #searchbar input[type=submit] {
+      background-color: #2196F3;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    #searchbar input[type=submit]:hover {
+      background-color: #0d8aee;
+    }
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
+
+    .logo {
+      max-width: 250px;
+      margin-right: 30px;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: calc(100% - 280px);
+      max-width: 500px;
+    }
+    /* Hide logo for smaller screens */
+    @media (max-width: 1100px) {
+      .logo {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header" class="header">
+    <img src="{{ url_for('static', filename='imgs/ISIColourLogo.png') }}" alt="ISI Logo" class="logo">
+    <div id="header-content">
+      <h1>ISI - Company Dashboard</h1>
+      <div id="searchbar">
+        <input type="text" id="search" name="search" placeholder="Search...">
+        <input type="submit" value="Search">
+      </div>
+    </div>
+  </div>
+  <!-- Dashboard section -->
+  <div id="dashboardlayout">
+    <div id="dashboard">
+      <h2>Useful Links</h2>
+      <a href="https://isisafety.com/" class="dashboard-button">Company Website</a>
+      <a href="https://live.servicesight.com/" class="dashboard-button">Service Sight</a>
+      <a href="https://lucid.app/" class="dashboard-button">Lucid App</a>
+    </div>
+    <div id="dashboard">
+      <h2>Tools</h2>
+      <a href="/upload" class="dashboard-button">ISI - PDF Data Extraction Tool - AECOM (WiP)</a>
+      <a href="#" class="dashboard-button">ISI - Remedial Actions CSV Generator (Placeholder)</a>
+      <a href="#" class="dashboard-button">ISI - Incident Report CSV Generator (Placeholder)</a>
+    </div>
+    <div id="dashboard">
+      <h2>Technical Support</h2>
+      <a href="#" class="dashboard-button">Suggestion Request (Placeholder)</a>
+      <a href="#" class="dashboard-button">Support Request (Placeholder)</a>
+    </div>
+    <div id="dashboard">
+      <h2>Other</h2>
+      <a href="/quiz" class="dashboard-button">SAFED Mock Test - LOLER (WiP)</a>
+      <a href="/leaderboard" class="dashboard-button">SAFED Mock Test - Leaderboard (WiP)</a>
+      <a href="#" class="dashboard-button">Submit Sales Opportunity (Placeholder)</a>
+    </div>
+  </div>
+</body>
+</html>
